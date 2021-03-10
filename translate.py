@@ -12,7 +12,6 @@ headers = {
 }
 
 params = {
-    "text": "hola",
     "to": "en",
     "Content-type": "application/json",
     "api-version": "3.0"
@@ -20,10 +19,8 @@ params = {
 
 df = pd.read_csv("data/raw/lyrics_to_translate.csv")["lyrics"].tolist()
 
-body = [{"text": x} for x in ]
+text = ["hola"]
+body = [{"text": x} for x in text]
 
-print(len("".join(pd.read_csv("data/raw/lyrics_to_translate.csv")["lyrics"].tolist())))
-print(len(json.dumps(body)))
-
-# r = requests.post('https://api.cognitive.microsofttranslator.com/translate', headers=headers, params=params, json=body)
-# print(json.dumps(r.json(), sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': ')))
+r = requests.post('https://api.cognitive.microsofttranslator.com/translate', headers=headers, params=params, json=body)
+print(json.dumps(r.json(), sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': ')))
