@@ -2,6 +2,9 @@
 # Project Specific
 ######################
 *.pptx
+
+keys.json
+
 data/
 .ipynb_checkpoints/
 __pycache__/
